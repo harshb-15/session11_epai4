@@ -25,24 +25,34 @@ class Polygon:
 
     @property
     def intangle(self):
-        return round(((self.sides - 2) * 180) / self.sides, 2) if self._intangle is None else self._intangle
+        if self._intangle is None:
+            self._intangle = round(((self.sides - 2) * 180) / self.sides, 2)
+        return self._intangle
 
     @property
     def sidelength(self):
-        return round(2 * self._radius * math.sin(math.pi / self.sides),
-                     2) if self._sidelength is None else self._sidelength
+        if self._sidelength is None:
+            self._sidelength = round(2 * self._radius * math.sin(math.pi / self.sides),
+                                     2) if self._sidelength is None else self._sidelength
+        return self._sidelength
 
     @property
     def apothem(self):
-        return round(self._radius * math.cos(math.pi / self.sides), 2) if self._apothem is None else self._apothem
+        if self._apothem is None:
+            self._apothem = round(self._radius * math.cos(math.pi / self.sides), 2)
+        return self._apothem
 
     @property
     def area(self):
-        return round((self.sides * self.sidelength * self.apothem) / 2, 2) if self._area is None else self._area
+        if self._area is None:
+            self._area = round((self.sides * self.sidelength * self.apothem) / 2, 2)
+        return self._area
 
     @property
     def perimeter(self):
-        return round(self.sides * self.sidelength, 2) if self._perimeter is None else self._perimeter
+        if self._perimeter is None:
+            self._perimeter = round(self.sides * self.sidelength, 2)
+        return self._perimeter
 
     def __repr__(self):
         return f"Regular Convex Polygon : Sides = {self.sides}, Radius = {self.radius}, Angle = {self.intangle} degrees, Side Length = {self.sidelength}, Apothem = {self.apothem}, Area = {self.area}, Perimeter = {self.perimeter}"
