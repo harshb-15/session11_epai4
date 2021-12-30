@@ -1,7 +1,7 @@
 # EPAi4.0 Session 11
 GitHub Profile : [harshb-15](https://github.com/harshb-15)
 
-Colab Link : [GoogleColab]()
+Colab Link : [GoogleColab](https://colab.research.google.com/drive/16-np5tvb8g6kttxF3LwDxVUD3PasGAqU#scrollTo=_1oxZPXuopfX)
 ## Iterables and Iterators
 This assignment is to be done on top of previous assignment.
 1. We have to make some changes in Polygon classes such that it's attributes are lazily calculated.
